@@ -6,32 +6,41 @@ public class Vehicle
     public string Model;
     public int FuelCapacity;
     public string Color;
-    public int FuelFor1Km;
-    public int CurrentFuel;
+    public double FuelFor1Km;
+    public double CurrentFuel;
 
     public Vehicle(int year)
     {
-        Year = year;
+        this.Year = year;
     }
-    public Vehicle(int Year, string Model, string Color,int FuelCapacity, int FuelFor1Km, int CurrentFuel)
+    public Vehicle(int year, string model, string color, int fuelCapacity, double fuelFor1Km, double currentFuel) : this(year)
     {
-        this.Model = Model;
-        this.FuelCapacity = FuelCapacity;
-        this.Color = Color;
-        this.FuelFor1Km = FuelFor1Km;
-        this.CurrentFuel = CurrentFuel;
-        this.Year = Year;
+        this.Model = model;
+        this.FuelCapacity = fuelCapacity;
+        this.Color = color;
+        this.FuelFor1Km = fuelFor1Km;
+        this.CurrentFuel = currentFuel;
+        this.Year = year;
     }
 
-    public void GetInfo()
+    public void ShowInfo()
     {
-        Console.WriteLine($"Model: {this.Model}");
-        Console.WriteLine($"Color: {this.Color}");
-        Console.WriteLine($"Current Fuel: {this.CurrentFuel}");
-        Console.WriteLine($"Year: {this.Year}");
-        Console.WriteLine($"Fuel For 1 Km: {this.FuelFor1Km}");
-        Console.WriteLine($"Fuel Capacity: {this.FuelCapacity}");
-        
+        Console.WriteLine($"Model: {Model} | Year: {Year} | Color: {Color} | Fuel: {CurrentFuel}/{FuelCapacity}");
     }
+    public void Drive(int km)
+    {
+        double neededFuel = km * FuelFor1Km;
+        if (CurrentFuel >= neededFuel)
+            {
+            CurrentFuel -= neededFuel;
+            Console.WriteLine($"{km} km yol gedildi. qalan yanacaq: {CurrentFuel} litr.");
+            }
+        else
+        {
+            Console.WriteLine($"bu yolu getmək üçün kifayət qədər yanacaq yoxdur. lazım olan: " +
+                              $"{neededFuel} L, mövcud: {CurrentFuel} L.");
+        }
+    }
+  
 }
 

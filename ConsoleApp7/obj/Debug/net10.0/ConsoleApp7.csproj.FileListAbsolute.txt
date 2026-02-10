@@ -12,3 +12,4 @@
 /Users/khatira/Desktop/ConsoleApp7/ConsoleApp7/obj/Debug/net10.0/ConsoleApp7.pdb
 /Users/khatira/Desktop/ConsoleApp7/ConsoleApp7/obj/Debug/net10.0/ConsoleApp7.genruntimeconfig.cache
 /Users/khatira/Desktop/ConsoleApp7/ConsoleApp7/obj/Debug/net10.0/ref/ConsoleApp7.dll
+/Users/khatira/Desktop/ConsoleApp7/ConsoleApp7/obj/Debug/net10.0/ConsoleApp7.sourcelink.json
